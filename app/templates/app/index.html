@@ -1,0 +1,116 @@
+{% extends 'app/base.html' %} {% block contenido %}
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+    <a href="index.html" class="navbar-brand ">
+      <h1 class="m-0 text-dark"><span class="text-dark">Mazos myl</span> primera era</h1>
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+      <div class="navbar-nav m-auto py-0">
+        <a href="{% url 'login' %}" class="nav-item nav-link">Iniciar sesión</a>
+        <a href="../crearclienteform" class="nav-item nav-link">Registrarse</a>
+        <a href="../index" class="nav-item nav-link">Nosotros</a>
+        <a href="../index" class="nav-item nav-link">Contacto</a>
+
+      </div>
+
+    </div>
+  </nav>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5 pb-5">
+  <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#header-carousel" data-slide-to="1"></li>
+      
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item position-relative active" style="min-height: 100vh;">
+        <img class="position-absolute w-100 h-100" src="../static/app/img/Primera_Era2.png" style="object-fit: cover;">
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+          <div class="p-3" style="max-width: 900px;">
+            <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown"
+              style="letter-spacing: 3px;"></h6>
+            <h3 class="display-3 text-capitalize text-white mb-3">Mazos myl</h3>
+            <p class="mx-md-5 px-5">Mazos myl, crea tus decks a tu gusto y podras dejarlos guardados como recordatorio y si quieres tambien
+              tenemos vetas de cartas.
+            </p>
+            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp"
+              href="../crearclienteform">Registrate</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item position-relative" style="min-height: 100vh;">
+        <img class="position-absolute w-100 h-100" src="../static/app/img/1era3.png" style="object-fit: cover;">
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+          <div class="p-3" style="max-width: 900px;">
+            <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown"
+              style="letter-spacing: 3px;"></h6>
+            <h3 class="display-3 text-capitalize text-white mb-3">Mazos myl</h3>
+            <p class="mx-md-5 px-5">Mazos myl, crea tus decks a tu gusto y podras dejarlos guardados como recordatorio y si quieres tambien
+              tenemos vetas de cartas.</p>
+            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp"
+              href="../crearclienteform">
+              Registrate</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid px-0 py-5 my-5">
+  <div class="row mx-0 justify-content-center text-center">
+    <div class="col-lg-6">
+      <h6 class="d-inline-block bg-ligth text-dark-uppercase py-1 px-2">Mazos myl</h6>
+      <h1>Crea tus decks a tu gusto</h1>
+    </div>
+  </div>
+  <div class="owl-carousel service-carousel">
+    <div class="service-item position-relative">
+      <img class="img-fluid" src="../static/app/img/Wallpaper_El_Reto.jpg" alt="">
+      <div class="service-text text-center">
+
+        <div class="w-100 bg-white text-center p-4">
+          <a class="btn btn-primary" href="../crearclienteform">Comprar ahora</a>
+        </div>
+      </div>
+    </div>
+    <div class="service-item position-relative">
+      <img class="img-fluid" src="../static/app/img/goti.jpg" alt="">
+      <div class="service-text text-center">
+
+        <div class="w-100 bg-white text-center p-4">
+          <a class="btn btn-primary" href="../crearclienteform">Comprar ahora</a>
+        </div>
+      </div>
+    </div>
+    <div class="service-item position-relative">
+      <img class="img-fluid" src="../static/app/img/rag.jpg" alt="">
+      <div class="service-text text-center">
+
+        <div class="w-100 bg-white text-center p-4">
+          <a class="btn btn-primary" href="../crearclienteform">Comprar ahora</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- Service End -->
+
+
+
+
+
+
+  {% endblock %}

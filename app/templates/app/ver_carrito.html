@@ -1,0 +1,73 @@
+{% extends 'app/base2.html' %}
+{% block contenido %}
+{% block navbar %}
+{% include 'app/basecliente.html' %}
+{% endblock %}
+
+<h1>Carrito de compras</h1>
+{% if carrito %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Libro</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Subtotal</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in carrito %}
+    <tr>
+      <td>
+        {% if item.imagen %}
+        <img src="{{ item.imagen.url }}" class="img-thumbnail" style="width: 10%; max-width: 10%;" />
+        {% else %}
+        <img src=" ../static/app/img/imagenlibros.jpg" class="img-thumbnail" style="width: 10%; max-width: 50%;" />
+        {% endif %}
+        {{ item.carta.nombre }}
+      </td>
+      <td>{{ item.cantidad }}</td>
+      <td>${{ item.carta.precio }}</td>
+      <td>${{ item.subtotal }}</td>
+      <td>
+        <form method="POST" action="{% url 'eliminar_del_carrito' item.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+
+    {% endfor %}
+    <tr>
+
+      <td><strong>Total:</strong></td>
+      <td><strong>${{ total }}</strong></td>
+
+    </tr>
+  </tbody>
+</table>
+
+{% else %}
+<p>No hay productos en el carrito.</p>
+{% endif %}
+
+<div class="main container-fluid d-flex justify-content-center">
+  <form method="POST" action="{% url 'realizar_compracartas' %}">
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-dark">Realizar compra</button>
+
+  </form>
+
+</div>
+
+<ul class="nav d-flex justify-content-center">
+  <li class="nav-item d-flex justify-content-center">
+    <a class="nav-link text-dark" href="../home" data-bs-toggle="tooltip"
+      title="¡AQUÍ PUEDES VOLVER A TU PERFIL!">Volver al
+      perfil</a>
+  </li>
+</ul>
+
+{% endblock %}

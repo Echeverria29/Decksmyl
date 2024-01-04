@@ -1,0 +1,47 @@
+{% extends 'app/base2.html' %} {% block contenido %}
+
+{% if user.cliente %}
+{% block navbar %}
+{% include 'app/basecliente.html' %}
+{% endblock %}
+{% elif user.empleado %}
+{% block navbar2 %}
+{% include 'app/basempleado.html' %}
+{% endblock %}
+{% elif user.tecnico %}
+{% block navbar3 %}
+{% include 'app/basetecnico.html' %}
+{% endblock %}
+{% elif user.is_superuser %}
+{% block navbar4 %}
+{% include 'app/baseadmin.html' %}
+{% endblock %}
+{% endif %}
+
+
+<body>
+  {% if user.cliente %}
+  {% block tablacli %}
+  {% include 'app/basetablacli.html' %}
+  {% endblock %}
+  {% endif %}
+  {% if user.empleado %}
+  {% block tablaemp %}
+  {% include 'app/basetablaemp.html' %}
+  {% endblock %}
+  {% endif %}
+  {% if user.tecnico %}
+  {% block tablatec %}
+  {% include 'app/basetablatec.html' %}
+  {% endblock %}
+  {% endif %}
+  {% if user.is_superuser %}
+  {% block tablaadmin %}
+  {% include 'app/basetablaadmin.html' %}
+  {% endblock %}
+  {% endif %}
+
+
+</body>
+
+{% endblock %}
